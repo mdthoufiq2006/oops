@@ -1,0 +1,60 @@
+interface Vehicle {
+    void getColor();
+    void getNumber();
+    void getConsumption();
+}
+
+class TwoWheeler implements Vehicle {
+    String color = "Red";
+    String number = "TN01AB1234";
+    int distance = 100;
+    int mileage = 50;
+
+    public void getColor() {
+        System.out.println("Color: " + color);
+    }
+
+    public void getNumber() {
+        System.out.println("Number: " + number);
+    }
+
+    public void getConsumption() {
+        System.out.println("Fuel Consumed: " + (distance / mileage) + " litres");
+    }
+}
+
+class FourWheeler implements Vehicle {
+    String color = "Blue";
+    String number = "TN09XY5678";
+    int distance = 200;
+    int mileage = 20;
+
+    public void getColor() {
+        System.out.println("Color: " + color);
+    }
+
+    public void getNumber() {
+        System.out.println("Number: " + number);
+    }
+
+    public void getConsumption() {
+        System.out.println("Fuel Consumed: " + (distance / mileage) + " litres");
+    }
+}
+
+public class VehicleDemo {
+    public static void main(String[] args) {
+        TwoWheeler bike = new TwoWheeler();
+        FourWheeler car = new FourWheeler();
+
+        System.out.println("Two Wheeler:");
+        bike.getColor();
+        bike.getNumber();
+        bike.getConsumption();
+
+        System.out.println("\nFour Wheeler:");
+        car.getColor();
+        car.getNumber();
+        car.getConsumption();
+    }
+}
