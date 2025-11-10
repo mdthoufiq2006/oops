@@ -1,0 +1,45 @@
+interface Vehicle {
+    void getColor();
+    void getNumber();
+}
+
+class TwoWheeler implements Vehicle {
+    String color = "Red";
+    String number = "TN01AB1234";
+
+    public void getColor() {
+        System.out.println("Color: " + color);
+    }
+
+    public void getNumber() {
+        System.out.println("Number: " + number);
+    }
+}
+
+class FourWheeler implements Vehicle {
+    String color = "Blue";
+    String number = "TN09XY5678";
+
+    public void getColor() {
+        System.out.println("Color: " + color);
+    }
+
+    public void getNumber() {
+        System.out.println("Number: " + number);
+    }
+}
+
+public class VehicleDemo {
+    public static void main(String[] args) {
+        TwoWheeler bike = new TwoWheeler();
+        FourWheeler car = new FourWheeler();
+
+        System.out.println("Two Wheeler:");
+        bike.getColor();
+        bike.getNumber();
+
+        System.out.println("\nFour Wheeler:");
+        car.getColor();
+        car.getNumber();
+    }
+}
