@@ -1,0 +1,29 @@
+import java.util.Scanner;
+abstract class Employee {
+    public abstract void getAmount();
+}
+class HourlyEmployee extends Employee {
+    private int hoursWorked; 
+    private double hourlyRate; 
+    public HourlyEmployee(int hoursWorked, double hourlyRate) {
+        this.hoursWorked = hoursWorked;
+        this.hourlyRate = hourlyRate;
+    }
+    @Override
+    public void getAmount() {
+        double amount = hoursWorked * hourlyRate; 
+        System.out.println("Amount paid to HourlyEmployee: $" + amount);
+    }
+}
+public class EmployeeApp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in); 
+        System.out.print("Enter hours worked: ");
+        int hours = sc.nextInt(); 
+        System.out.print("Enter hourly rate: "); 
+        double rate = sc.nextDouble(); 
+        HourlyEmployee emp = new HourlyEmployee(hours, rate);
+        emp.getAmount();
+        sc.close(); // Close Scanner
+    }
+}
